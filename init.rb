@@ -1,21 +1,26 @@
 require 'redmine'
+require 'logger'
 
-Redmine::Plugin.register :redmine_extend_permissions do
-  name 'Redmine Extend Permissions plugin'
+Redmine::Plugin.register :redmine_hide_fields do
+  name 'Redmine Hide Fields plugin'
   author 'Aaron Addleman'
-  description 'This is a plugin for Redmine to add additional permissions to views or controllers'
-  version '0.0.1'
+  description 'This is a plugin for Redmine to hide fields with javascript'
+  version '0.0.5'
   url 'http://9thport.net/2011/03/20/redmine-hide-assigned-to-field-with-role-permissions-plugin/'
-  author_url 'http://9thport.net'
+  author_url 'http://9thport.net/about'
+  
+  # define permissions available to roles
+  
+  permission :view_issue_assigned_to, :issues => :index
+  permission :view_issue_parent_issue_id, :issues => :index
+  permission :view_issue_done_ratio, :issues => :index
 
-  permission :view_assigned_to, :issues => :index
-  permission :view_estimated_hours, :issues => :index
-  permission :view_done_ratio, :issues => :index
-  permission :view_attachment_description, :attachments => :index
-
-Redmine::MenuManager.map :top_menu do |menu|
-  menu.push :help_me, Redmine::Info.help_url, :last => true
+  # set help link to a wiki page
+  # Redmine::MenuManager.map :top_menu do |menu|
+  #   menu.push :help_me, , :last => true
+  # end  
+  
 end
 
-end
-
+# require hook for hiding fields
+require 'redmine_hide_fields/hooks/hide_fields'
