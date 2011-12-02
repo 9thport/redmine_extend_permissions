@@ -14,6 +14,7 @@ module RedmineHideFields
       #
       #
       # TODO: clean up the following method with a better solution to hide fields
+      # TODO: add code for when viewing an issue to hide fields
       def view_issues_form_details_bottom(context={})
         list = Array.new
         
