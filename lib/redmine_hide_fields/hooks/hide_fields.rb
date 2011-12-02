@@ -58,7 +58,7 @@ module RedmineHideFields
         #     myStr << list
         #   end
         # end
-        
+        # 
         # myStr << "\n"
         # myStr << "total_fields:"
         # myStr << "\n"
@@ -76,7 +76,7 @@ module RedmineHideFields
         # else
         #   myStr << hide_field_with_id_from_list(list, @no_of_fields)
         # end
-        
+        # 
         # aFile = File.new("/Users/aaron/myString.txt", "w")
         # aFile.write(myStr)
         # aFile.close

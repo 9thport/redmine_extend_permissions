@@ -1,3 +1,9 @@
 # English strings go here for Rails i18n
 en:
-  my_label: "My label"
+  activerecord:
+    errors:
+      messages:
+        not_in_future: "is not in the future"
+        not_allowed_to_be_changed: "is not allowed to be changed"
+
+  
